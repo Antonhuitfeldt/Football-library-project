@@ -1,12 +1,23 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
 import './App.css'
-import SearchTestPage from "./components/SearchTestPage";
+import NavBar from "./components/NavBar/NavBar";
+import SearchResults from './components/SearchResults/SearchResults';
+import SearchField from './components/SearchField/SearchField';
 
 function App() {
-  return <h1>Football Library</h1>;
+  return( 
+  <main>
+    <div className='nav-bar'>
+      <NavBar />
+    </div>
+    
+    <div className="hero-page">
+      <h1>Football Library</h1>
+      <SearchField />
+      <SearchResults />
+    </div>
+  </main>
+  )
 }
 
 export default App;
