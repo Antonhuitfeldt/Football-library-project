@@ -1,6 +1,7 @@
 import { ListGroup, Image } from "react-bootstrap";
 import "./SearchResults.css";
 
+/*
 const SearchResults = ({ results, type, onSelect }) => {
 
   if (!results || results.length === 0) {
@@ -10,7 +11,6 @@ const SearchResults = ({ results, type, onSelect }) => {
 
   return (
     <ul className="list-group mt-3">
-      {/* Loopar igenom alla resultat med map */}
       {results.map((item) => (
         <li
           key={item.id} 
@@ -37,12 +37,12 @@ const SearchResults = ({ results, type, onSelect }) => {
           <div>
             <h5 className="mb-1">
               {/* Om det är en spelare → visa item.name
-                  Om det är ett lag → visa item.teamName */}
+                  Om det är ett lag → visa item.teamName 
               {type === "player" ? item.name : item.teamName}
             </h5>
 
             <small className="text-muted">
-              {/* Samma sak här: olika info beroende på typ */}
+              {/* Samma sak här: olika info beroende på typ 
               {type === "player"
                 ? `${item.position} – ${item.team}`
                 : `${item.country} – ${item.league}`}
@@ -51,6 +51,20 @@ const SearchResults = ({ results, type, onSelect }) => {
         </li>
       ))}
     </ul>
+  );
+};
+
+*/
+
+const SearchResults = ({ player }) => {
+  if (!player) {
+    return <p>No player searched yet.</p>;
+  }
+
+  return (
+    <div className="player-result">
+      <p>{JSON.stringify(player, null, 2)}</p>
+    </div>
   );
 };
 
