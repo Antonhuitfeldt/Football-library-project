@@ -1,7 +1,7 @@
-import { ListGroup, Image } from "react-bootstrap";
+import { ListGroup } from "react-bootstrap";
 import "./SearchResults.css";
 
-const SearchResults =({ results }) => {
+const SearchResults =({ results, onTeamClick }) => {
   if (!results || results.length === 0) {
     return <p className="text-muted mt-3">No results found...</p>;
   }
@@ -13,7 +13,7 @@ const SearchResults =({ results }) => {
   return (
     <ListGroup className="mt-3">
       {listToShow.map((item) => (
-        <ListGroup.Item key={item.id} className="d-flex align-items-center">
+        <ListGroup.Item key={item.id} className="d-flex align-items-center" onClick={() => onTeamClick(item.id)}>
           <div>
             <h5 className="mb-1">{item.name}</h5>
             <small className="text-muted">
