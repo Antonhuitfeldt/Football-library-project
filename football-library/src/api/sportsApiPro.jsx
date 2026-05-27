@@ -1,7 +1,7 @@
 //Här gör vi anrop till api:et SportsApiPro
 const BASE_URL = "https://v2.football.sportsapipro.com";
 
-export async function searchPlayers(query) {
+export async function searchResults(query) {
   const apiKey = import.meta.env.VITE_SPORTS_API_PRO_KEY;
 
   if (!apiKey) {
