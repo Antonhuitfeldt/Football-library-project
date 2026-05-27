@@ -1,0 +1,20 @@
+.custom-navbar {
+    background-color: #000;
+
+    --bs-navbar-color: rgba(255, 255, 255, 0.75);
+    --bs-navbar-hover-color: #ff9e00;
+    --bs-navbar-active-color: #ffffff;
+    --bs-navbar-brand-color: #ffffff;
+    --bs-navbar-brand-hover-color: #ff9e00;
+}
+
+.custom-navbar .nav-link,
+.custom-navbar .navbar-brand,
+.custom-navbar .dropdown-toggle {
+    transition: color 0.3s ease;
+}
+
+.custom-navbar .nav-link a {
+    --bs-navbar-hover-color: #ff9e00;
+
+}

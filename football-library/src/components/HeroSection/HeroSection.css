@@ -1,0 +1,18 @@
+.hero-section {
+    background-color: black;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 4rem;
+}
+
+.hero-left {
+    width: 50%;
+}
+
+.hero-right {
+    width: 35%;
+}
