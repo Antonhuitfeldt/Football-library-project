@@ -4,9 +4,8 @@ import NavBar from "./components/NavBar/NavBar";
 import HeroSection from './components/HeroSection/HeroSection';
 import SearchResults from './components/SearchResults/SearchResults';
 import SearchField from './components/SearchField/SearchField';
-import { searchPlayers, getTeam } from './api/sportsApiPro';
+import { searchResults, getTeam } from './api/sportsApiPro';
 import TeamModal from './components/TeamModal/TeamModal';
-import { searchResults } from './api/sportsApiPro';
 
 const BasicTeamData =(results) => {
 
