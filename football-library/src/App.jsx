@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import './App.css'
 import NavBar from "./components/NavBar/NavBar";
+import HeroSection from './components/HeroSection/HeroSection';
 import SearchResults from './components/SearchResults/SearchResults';
-import SearchField from './components/SearchField/SearchField';
 import { searchResults } from './api/sportsApiPro';
 
 const BasicTeamData =(results) => {
@@ -49,8 +49,8 @@ const App =() => {
     </div>
     
     <div className="hero-page">
-      <h1>Football Library</h1>
-      <SearchField onSearchSubmit={onSearchSubmit}/>
+
+      <HeroSection onSearchSubmit={onSearchSubmit}/>
       <SearchResults results={results}/>
     </div>
   </main>
