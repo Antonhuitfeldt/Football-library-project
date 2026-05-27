@@ -3,14 +3,11 @@ import './App.css'
 import NavBar from "./components/NavBar/NavBar";
 import HeroSection from './components/HeroSection/HeroSection';
 import SearchResults from './components/SearchResults/SearchResults';
-import SearchField from './components/SearchField/SearchField';
 import { searchResults, getTeam } from './api/sportsApiPro';
 import TeamModal from './components/TeamModal/TeamModal';
 
 const BasicTeamData =(results) => {
-
-  const [player, setPlayer] = useState([]);
-  const [teamData, setTeamData] = useState(null);
+  
   const filtered = results.filter(item => item.type === "team" || item.type === "player");
 
   const cleanList = filtered.map(item => {
@@ -34,6 +31,7 @@ const BasicTeamData =(results) => {
 const App =() => {
 
   const [results, setResults] = useState([]);
+  const [teamData, setTeamData] = useState(null);
 
   const onSearchSubmit = async (query) => {
     const result = await searchResults(query);
