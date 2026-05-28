@@ -22,10 +22,9 @@ const SearchField = ({ onSearchSubmit }) => {
     return (
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicText">
-          <Form.Label>Search for player</Form.Label>
           <Form.Control 
             type="text" 
-            placeholder="Enter full player name"
+            placeholder="Search for your favorite team or player here..."
             value={searchString}
             onChange={(e) => setSearchString(e.target.value)} 
           />

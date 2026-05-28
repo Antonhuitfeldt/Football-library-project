@@ -1,4 +1,14 @@
 .search-result-item {
     cursor: pointer;
+    width: 80%;
+    margin: auto;
+    gap: 1rem;
+    border-top: 1px solid rgb(222, 226, 230) !important;;
+  }
+
+.search-result-item:hover {
+    background: #ff7700;
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.03);
   }
   

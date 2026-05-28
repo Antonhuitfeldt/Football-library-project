@@ -1,9 +1,9 @@
 import Carousel from "react-bootstrap/Carousel";
 import "./PlayerCarousel.css";
 
-const messi = "https://placehold.co/400x500?text=Messi";
-const ronaldo = "https://placehold.co/400x500?text=Ronaldo";
-const mbappe = "https://placehold.co/400x500?text=Mbappe";
+const salah = "https://wallpaperswide.com/download/mohamed_salah___liverpool-wallpaper-600x800.jpg";
+const ronaldo = "https://cdn.yourusercontent.com/media/usercontent/puzzles/228/thumbnails/cristiano-ronaldo-prime-0a42271b-c5e6-4a1e-81fb-2340288c5ccc.jpeg";
+const bruno = "https://wallpapercave.com/wp/wp6876995.jpg";
 
 const PlayerCarousel = () => {
   return (
@@ -11,8 +11,8 @@ const PlayerCarousel = () => {
       <Carousel.Item>
         <img
           className="d-block w-100 carousel-image"
-          src={messi}
-          alt="Messi"
+          src={salah}
+          alt="Salah"
         />
       </Carousel.Item>
 
@@ -27,8 +27,8 @@ const PlayerCarousel = () => {
       <Carousel.Item>
         <img
           className="d-block w-100 carousel-image"
-          src={mbappe}
-          alt="Mbappe"
+          src={bruno}
+          alt="Bruno"
         />
       </Carousel.Item>
     </Carousel>

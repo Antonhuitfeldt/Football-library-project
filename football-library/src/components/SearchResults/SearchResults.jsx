@@ -13,7 +13,7 @@ const SearchResults =({ results, onTeamClick }) => {
   return (
     <ListGroup className="mt-3">
       {listToShow.map((item) => (
-        <ListGroup.Item key={item.id} className="d-flex align-items-center" onClick={() => onTeamClick(item.id)}>
+        <ListGroup.Item key={item.id} className="d-flex align-items-center search-result-item mb-3" onClick={() => onTeamClick(item.id)}>
           <div>
             <h5 className="mb-1">{item.name}</h5>
             <small className="text-muted">
