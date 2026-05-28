@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container';
 import Modal from 'react-bootstrap/Modal';
 import Row from 'react-bootstrap/Row';
 import { getTeamImage, getTeamSquad } from '../../api/sportsApiPro';
+import FavoriteButton from '../FavoriteButton/FavoriteButton';
 
 function TeamModal({ teamData, show, onHide, onShowSquad, image }) {
   
@@ -64,6 +65,10 @@ function TeamModal({ teamData, show, onHide, onShowSquad, image }) {
       </Modal.Body>
 
       <Modal.Footer>
+        <FavoriteButton 
+              item={teamData}
+              keyName="favoriteTeam">
+        </FavoriteButton>
         <Button variant="primary" onClick={() => onShowSquad(teamData.data.team.id)}>Visa spelare</Button>
       </Modal.Footer>
     </Modal>

@@ -2,8 +2,9 @@ import Modal from 'react-bootstrap/Modal';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import FavoriteButton from '../FavoriteButton/FavoriteButton';
 
-function PlayerModal({ playerData, show, onHide }) {
+function PlayerModal({ playerData, show, onHide, item }) {
   if (!playerData) return null;
 
   const name = playerData.name;
@@ -71,6 +72,12 @@ function PlayerModal({ playerData, show, onHide }) {
             <Col xs={6}>
               <p><strong>Marknadsvärde</strong></p>
               <p>{marketValue}</p>
+            </Col>
+            <Col xs={6}>
+              <FavoriteButton 
+              item={playerData}
+              keyName="favoritePlayer">
+              </FavoriteButton>
             </Col>
           </Row>
         </Container>

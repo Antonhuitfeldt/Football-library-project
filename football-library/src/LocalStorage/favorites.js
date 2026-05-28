@@ -1,7 +1,7 @@
 // Hämtar favoriter från localStorage baserat på en key
-export function getFavorites(key) {
+export function getFavorites(keyName) {
     // Hämtar sparad data från localStorage
-    const stored = localStorage.getItem(key);
+    const stored = localStorage.getItem(keyName);
 
     // Om inget finns, returnera en tom lista
     if (!stored){
@@ -19,12 +19,12 @@ export function getFavorites(key) {
 
 
 // Sparar en lista av favoriter till localStorage
-export function saveFavorites(key, list) {
+export function saveFavorites(keyName, list) {
     // Gör om listan till en JSON-sträng
     const json = JSON.stringify(list);
 
     // Sparar JSON-strängen under rätt key
-    localStorage.setItem(key, json);
+    localStorage.setItem(keyName, json);
 }
 
 

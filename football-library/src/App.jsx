@@ -7,6 +7,8 @@ import { searchResults, getTeam, getTeamSquad, getTeamImage } from './api/sports
 import TeamModal from './components/TeamModal/TeamModal';
 import PlayerList from './components/PlayerList/PlayerList';
 import PlayerModal from './components/PlayerModal/PlayerModal';
+import FavoritesPage from './pages/FavoritesPage/FavoritesPage';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const BasicTeamData =(results) => {
   
@@ -66,23 +68,16 @@ const App =() => {
     setTeamData(null);
   }
 
-  return( 
-  <main>
-    <div className='nav-bar'>
-      <NavBar />
-    </div>
-    
-    <div className="hero-page">
+  const HomePage = () => (
+    <>
       <HeroSection onSearchSubmit={onSearchSubmit} />
       <SearchResults results={results} onTeamClick={onTeamClick} />
-      <hr></hr>
-      
+      <hr />
       <PlayerList
-        players={players} 
+        players={players}
         image={image}
         onPlayerClick={onPlayerClick}
-        />
-      
+      />
       <TeamModal
         teamData={teamData}
         show={teamData !== null}
@@ -90,16 +85,30 @@ const App =() => {
         onShowSquad={onShowSquad}
         image={image}
       />
-
-      <PlayerModal 
+      <PlayerModal
         playerData={playerData}
         show={playerData !== null}
         onHide={() => setPlayerData(null)}
       />
-      
-    </div>
-  </main>
-  )
+    </>
+  );
+  
+  return (
+    <Router>
+      <main>
+        <div className="nav-bar">
+          <NavBar />
+        </div>
+  
+        <div className="hero-page">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/favorites" element={<FavoritesPage keyName="favoritePlayers" />} />
+          </Routes>
+        </div>
+      </main>
+    </Router>
+  );
 }
 
 export default App;
