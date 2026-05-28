@@ -1,0 +1,10 @@
+.footer-title h3 {
+    color: white;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.footer-title p {
+    color: rgba(255,255,255,0.6);
+    margin-top: 0.5rem;
+}

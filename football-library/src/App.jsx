@@ -5,6 +5,7 @@ import HeroSection from './components/HeroSection/HeroSection';
 import SearchResults from './components/SearchResults/SearchResults';
 import { searchResults, getTeam } from './api/sportsApiPro';
 import TeamModal from './components/TeamModal/TeamModal';
+import FooterSection from "./components/FooterSection/FooterSection";
 
 const BasicTeamData =(results) => {
   
@@ -64,7 +65,10 @@ const App =() => {
         onHide={() => setTeamData(null)}
       />
     </div>
+
+    <FooterSection />
   </main>
+  
   )
 }
 
