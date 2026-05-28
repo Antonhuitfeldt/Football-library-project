@@ -1,0 +1,25 @@
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import "./PlayerList.css";
+
+const PlayerList = ({ players, image, onPlayerClick }) => {
+  if (players.length === 0) return null;
+
+  return (
+    <Container>
+      <div className="player-list-header">
+        <img src={image} width={40} />
+        <h2>Players</h2>
+      </div>
+      {players.map((item) => (
+        <Row key={item.player.id} className='player-row' onClick={() => onPlayerClick(item.player)}>
+          <Col xs={6}>{item.player.name}</Col>
+          <Col xs={6}>{item.player.position}</Col>
+        </Row>
+      ))}
+    </Container>
+  );
+}
+
+export default PlayerList;

@@ -19,6 +19,7 @@ export async function searchResults(query) {
   }
 
   const data = await response.json();
+  console.log(data)
 
   return data;
 }
@@ -60,4 +61,23 @@ export async function getTeamImage(teamId) {
   
   console.log(url);
   return url;
+}
+
+export async function getTeamSquad(teamId) {
+  const apiKey = import.meta.env.VITE_SPORTS_API_PRO_KEY;
+
+  const response = await fetch(`${BASE_URL}/api/teams/${teamId}/players`, {
+    headers: {
+      "x-api-key": apiKey,
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error("Kunde inte hämta laginfo.");
+  }
+
+  const data = await response.json();
+  console.log(data)
+  
+  return data;
 }

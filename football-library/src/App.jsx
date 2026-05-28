@@ -3,8 +3,10 @@ import './App.css'
 import NavBar from "./components/NavBar/NavBar";
 import HeroSection from './components/HeroSection/HeroSection';
 import SearchResults from './components/SearchResults/SearchResults';
-import { searchResults, getTeam } from './api/sportsApiPro';
+import { searchResults, getTeam, getTeamSquad, getTeamImage } from './api/sportsApiPro';
 import TeamModal from './components/TeamModal/TeamModal';
+import PlayerList from './components/PlayerList/PlayerList';
+import PlayerModal from './components/PlayerModal/PlayerModal';
 
 const BasicTeamData =(results) => {
   
@@ -32,6 +34,13 @@ const App =() => {
 
   const [results, setResults] = useState([]);
   const [teamData, setTeamData] = useState(null);
+  const [players, setPlayers] = useState([]);
+  const [image, setImage] = useState(null);
+  const [playerData, setPlayerData] = useState(null);
+
+  const onPlayerClick = (player) => {
+    setPlayerData(player);
+  }
 
   const onSearchSubmit = async (query) => {
     const result = await searchResults(query);
@@ -46,7 +55,15 @@ const App =() => {
 
   const onTeamClick = async (teamId) => {
     const data = await getTeam(teamId);
+    const url = await getTeamImage(teamId);
     setTeamData(data);
+    setImage(url);
+  }
+
+  const onShowSquad = async (teamId) => {
+    const team = await getTeamSquad(teamId);
+    setPlayers(team.data.players);
+    setTeamData(null);
   }
 
   return( 
@@ -58,11 +75,28 @@ const App =() => {
     <div className="hero-page">
       <HeroSection onSearchSubmit={onSearchSubmit} />
       <SearchResults results={results} onTeamClick={onTeamClick} />
+      <hr></hr>
+      
+      <PlayerList
+        players={players} 
+        image={image}
+        onPlayerClick={onPlayerClick}
+        />
+      
       <TeamModal
         teamData={teamData}
         show={teamData !== null}
         onHide={() => setTeamData(null)}
+        onShowSquad={onShowSquad}
+        image={image}
       />
+
+      <PlayerModal 
+        playerData={playerData}
+        show={playerData !== null}
+        onHide={() => setPlayerData(null)}
+      />
+      
     </div>
   </main>
   )
