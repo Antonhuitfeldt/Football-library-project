@@ -68,6 +68,7 @@ const App =() => {
     setTeamData(null);
   }
 
+  //Skapat en HomePage
   const HomePage = () => (
     <>
       <HeroSection onSearchSubmit={onSearchSubmit} />
