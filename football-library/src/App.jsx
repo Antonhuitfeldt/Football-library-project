@@ -44,7 +44,6 @@ const App =() => {
     setResults(cleanData);
   }
 
-  // Tillfällig testknapp
   const onTeamClick = async (teamId) => {
     const data = await getTeam(teamId);
     setTeamData(data);
@@ -57,12 +56,8 @@ const App =() => {
     </div>
     
     <div className="hero-page">
-      <HeroSection onSearchSubmit={onSearchSubmit}/>
-      <SearchResults results={results}/>
-
-      {/* Tillfällig testknapp */}
-      <button onClick={() => onTeamClick(35)}>Testa Barcelona</button>
-
+      <HeroSection onSearchSubmit={onSearchSubmit} />
+      <SearchResults results={results} onTeamClick={onTeamClick} />
       <TeamModal
         teamData={teamData}
         show={teamData !== null}
