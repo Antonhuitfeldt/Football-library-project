@@ -3,7 +3,7 @@ import "./SearchResults.css";
 
 const SearchResults =({ results, onTeamClick }) => {
   if (!results || results.length === 0) {
-    return <p className="text-muted mt-3">No results found...</p>;
+    return 
   }
 
   const topResultType = results[0].type;

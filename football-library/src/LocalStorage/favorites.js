@@ -29,9 +29,9 @@ export function saveFavorites(keyName, list) {
 
 
 // Kollar om ett visst id redan finns i favoritlistan
-export function isFavorite(key, id) {
+export function isFavorite(keyName, id) {
     // Hämtar listan från localStorage
-    const list = getFavorites(key);
+    const list = getFavorites(keyName);
 
     // Returnerar true om id finns i listan, annars false
     return list.some(item => item.id === id);
@@ -39,9 +39,9 @@ export function isFavorite(key, id) {
 
 
 // Lägger till eller tar bort ett item från favoriter
-export function toggleFavorites(key, item) {
+export function toggleFavorites(keyName, item) {
     // Hämtar nuvarande lista
-    const list = getFavorites(key);
+    const list = getFavorites(keyName);
 
     // Kollar om item redan finns i listan
     const exists = list.some(fav => fav.id === item.id);
@@ -57,5 +57,5 @@ export function toggleFavorites(key, item) {
     }
 
     // Spara den uppdaterade listan
-    saveFavorites(key, updatedList);
+    saveFavorites(keyName, updatedList);
 }

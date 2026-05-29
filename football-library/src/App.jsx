@@ -47,12 +47,8 @@ const App =() => {
 
   const onSearchSubmit = async (query) => {
     const result = await searchResults(query);
-
-    console.log(result);
-    console.log(result.data);
-    console.log(result.data.results);
-
     const cleanData = BasicTeamData(result.data.results);
+    
     setResults(cleanData);
   }
 
@@ -73,13 +69,17 @@ const App =() => {
   const HomePage = () => (
     <>
       <HeroSection onSearchSubmit={onSearchSubmit} />
+
       <SearchResults results={results} onTeamClick={onTeamClick} />
+
       <hr />
+
       <PlayerList
         players={players}
         image={image}
         onPlayerClick={onPlayerClick}
       />
+
       <TeamModal
         teamData={teamData}
         show={teamData !== null}
@@ -87,33 +87,28 @@ const App =() => {
         onShowSquad={onShowSquad}
         image={image}
       />
+
       <PlayerModal
         playerData={playerData}
         show={playerData !== null}
         onHide={() => setPlayerData(null)}
       />
-    </div>
-
-    <FooterSection />
-  </main>
-  
-  )
+      
+      <FooterSection />
     </>
   );
   
   return (
     <Router>
       <main>
-        <div className="nav-bar">
-          <NavBar />
-        </div>
+        <NavBar />
   
-        <div className="hero-page">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/favorites" element={<FavoritesPage keyName="favoritePlayers" />} />
-          </Routes>
-        </div>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/favorites" element={<FavoritesPage 
+          playerKey="favoritePlayers" 
+          teamKey="favoriteTeams"/>} />
+        </Routes>
       </main>
     </Router>
   );

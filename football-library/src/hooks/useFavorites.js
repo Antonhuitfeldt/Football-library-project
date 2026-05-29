@@ -16,7 +16,8 @@ export function useFavorites(keyName) {
 
     // Kollar om ett visst id finns i favoritlistan (mot state)
     function isFavorite(id) {
-        return favorites.some(item => item.id === id);
+        const stored = getFavorites(keyName);
+        return stored.some(item => item.id === id);
     }
 
 
