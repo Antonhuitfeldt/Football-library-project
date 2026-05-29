@@ -105,7 +105,9 @@ const App =() => {
   
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/favorites" element={<FavoritesPage keyName="favoritePlayers" />} />
+          <Route path="/favorites" element={<FavoritesPage 
+          playerKey="favoritePlayers" 
+          teamKey="favoriteTeams"/>} />
         </Routes>
       </main>
     </Router>

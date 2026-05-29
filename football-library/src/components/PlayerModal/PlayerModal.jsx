@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import FavoriteButton from '../FavoriteButton/FavoriteButton';
 
-function PlayerModal({ playerData, show, onHide, item }) {
+function PlayerModal({ playerData, show, onHide }) {
   if (!playerData) return null;
 
   const name = playerData.name;
@@ -75,8 +75,8 @@ function PlayerModal({ playerData, show, onHide, item }) {
             </Col>
             <Col xs={6}>
               <FavoriteButton 
-              item={playerData}
-              keyName="favoritePlayer">
+              item={playerData.name}
+              keyName="favoritePlayers">
               </FavoriteButton>
             </Col>
           </Row>
