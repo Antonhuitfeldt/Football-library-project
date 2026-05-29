@@ -75,7 +75,7 @@ function PlayerModal({ playerData, show, onHide }) {
             </Col>
             <Col xs={6}>
               <FavoriteButton 
-              item={playerData.name}
+              item={playerData}
               keyName="favoritePlayers">
               </FavoriteButton>
             </Col>

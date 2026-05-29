@@ -59,7 +59,7 @@ function TeamModal({ teamData, show, onHide, onShowSquad, image }) {
               <p>{form.join('  ')}</p>
             </Col>
           </Row>
-        </Container>
+        </Container> 
       </Modal.Body>
 
       <Modal.Footer>
@@ -67,7 +67,7 @@ function TeamModal({ teamData, show, onHide, onShowSquad, image }) {
               item={team}
               keyName="favoriteTeams">
         </FavoriteButton>
-        <Button variant="primary" onClick={() => onShowSquad()}>Visa spelare</Button>
+        <Button variant="primary" onClick={() => onShowSquad(teamData.data.team.id)}>Visa spelare</Button>
       </Modal.Footer>
     </Modal>
   );
