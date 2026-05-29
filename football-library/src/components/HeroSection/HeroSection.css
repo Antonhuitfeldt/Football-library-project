@@ -16,3 +16,40 @@
 .hero-right {
     width: 35%;
 }
+
+@media (max-width: 900px) {
+
+    .hero-section {
+        justify-content: center;
+        text-align: center;
+
+        padding: 2rem;
+    }
+
+    .hero-left {
+        width: 100%;
+
+        align-items: center;
+    }
+
+    .hero-right {
+        display: none;
+    }
+
+    .hero-left h1 {
+        font-size: 5rem;
+    }
+
+    .search-field {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .search-field input {
+        width: 100%;
+    }
+
+    .search-field input::placeholder {
+        font-size: 0.95rem;
+    }
+}

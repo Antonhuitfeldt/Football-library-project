@@ -2,9 +2,9 @@ import React from "react";
 import { useFavorites } from "../../hooks/useFavorites";
 import "./FavoritesPage.css";
 
-const FavoritesPage = ({ key }) => {
+const FavoritesPage = ({ keyName }) => {
 
-    const { favorites } = useFavorites(key);
+    const { favorites } = useFavorites(keyName);
 
     return (
         <div className="favorites-page">
@@ -17,7 +17,7 @@ const FavoritesPage = ({ key }) => {
                 {/* Om listan har innehåll */}
                 <ul>
                     {favorites.map((item) => (
-                    <li key={item.id}>
+                    <li keyName={item.id}>
                         {item.name}
                     </li>
                     ))}
