@@ -65,7 +65,7 @@ function TeamModal({ teamData, show, onHide, onShowSquad, image }) {
       <Modal.Footer>
         <FavoriteButton 
               item={team}
-              keyName="favoriteTeam">
+              keyName="favoriteTeams">
         </FavoriteButton>
         <Button variant="primary" onClick={() => onShowSquad()}>Visa spelare</Button>
       </Modal.Footer>
