@@ -1,0 +1,17 @@
+.favorites-page {
+    background: #ff7700;
+    background: linear-gradient(0deg, rgba(255,119,0,1) 0%, rgba(0,0,0,1) 100%);
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 4rem;
+}
+
+.favorites-content {
+    width: 60%;
+    max-width: 800px;
+    color: white;
+}
