@@ -1,1 +1,33 @@
+.custom-navbar {
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(255, 119, 0, 0.55) 100%
+    );
 
+    padding: 1rem 2rem;
+}
+
+/* Logo */
+.custom-navbar .navbar-brand {
+    color: white !important;
+}
+
+/* Links */
+.custom-navbar .nav-link,
+.custom-navbar .dropdown-toggle {
+    color: rgba(255,255,255,0.7) !important;
+    transition: 0.2s ease;
+}
+
+/* Hover */
+.custom-navbar .nav-link:hover,
+.custom-navbar .dropdown-toggle:hover,
+.custom-navbar .navbar-brand:hover {
+    color: #ff9e00 !important;
+}
+
+/* Active page */
+.custom-navbar .nav-link.active {
+    color: white !important;
+}

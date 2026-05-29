@@ -4,8 +4,8 @@ const HeroTitle = () => {
   return (
     <h1 className="hero-title">
       SEARCH <br />
-      THE <br />
-      VAULT
+      YOUR <br />
+      TEAM!
     </h1>
   );
 };

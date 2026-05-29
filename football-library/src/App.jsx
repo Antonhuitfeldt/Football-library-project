@@ -5,6 +5,7 @@ import HeroSection from './components/HeroSection/HeroSection';
 import SearchResults from './components/SearchResults/SearchResults';
 import { searchResults, getTeam, getTeamSquad, getTeamImage } from './api/sportsApiPro';
 import TeamModal from './components/TeamModal/TeamModal';
+import FooterSection from "./components/FooterSection/FooterSection";
 import PlayerList from './components/PlayerList/PlayerList';
 import PlayerModal from './components/PlayerModal/PlayerModal';
 import FavoritesPage from './pages/FavoritesPage/FavoritesPage';
@@ -91,6 +92,12 @@ const App =() => {
         show={playerData !== null}
         onHide={() => setPlayerData(null)}
       />
+    </div>
+
+    <FooterSection />
+  </main>
+  
+  )
     </>
   );
   

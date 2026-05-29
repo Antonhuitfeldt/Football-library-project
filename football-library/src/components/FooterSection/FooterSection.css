@@ -1,0 +1,30 @@
+.footer-section {
+
+    margin-top: 4rem;
+    padding-top: 1rem;
+    color: white;
+    background: #ff7700;
+    background: linear-gradient(0deg,rgba(255, 119, 0, 1) 0%, rgba(000, 000, 0, 1) 100%);
+}
+
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 2rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+
+
+.footer-copy p {
+    text-decoration: none;
+    color: rgba(255,255,255,0.7);
+    transition: 0.2s ease;
+}
