@@ -11,6 +11,8 @@ const SearchResults =({ results, onTeamClick }) => {
   const listToShow = results.filter(item => item.type === topResultType);
 
   return (
+    <div>
+      <h2 className="search-result-title">Teams</h2>
       <ListGroup className="mt-3">
         {listToShow.map((item) => (
           <ListGroup.Item key={item.id} className="d-flex align-items-center search-result-item mb-3" onClick={() => onTeamClick(item.id)}>
@@ -23,6 +25,7 @@ const SearchResults =({ results, onTeamClick }) => {
           </ListGroup.Item>
         ))}
       </ListGroup>
+    </div>
   );
 };
 

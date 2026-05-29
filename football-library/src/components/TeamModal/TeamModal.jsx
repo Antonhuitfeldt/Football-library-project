@@ -4,23 +4,10 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Modal from 'react-bootstrap/Modal';
 import Row from 'react-bootstrap/Row';
-import { getTeamImage } from '../../api/sportsApiPro';
+import { getTeamImage, getTeamSquad } from '../../api/sportsApiPro';
+import FavoriteButton from '../FavoriteButton/FavoriteButton';
 
-function TeamModal({ teamData, show, onHide }) {
-  const [image, setImage] = useState(null);
-
-  useEffect(() => {
-    if (!show || !teamData) return;
-  
-    const teamId = teamData.data.team.id;
-  
-    const fetchImage = async () => {
-      const url = await getTeamImage(teamId);
-      setImage(url);
-    };
-  
-    fetchImage();
-  }, [show, teamData]);
+function TeamModal({ teamData, show, onHide, onShowSquad, image }) {
   
   if (!teamData) return null;
 
@@ -78,7 +65,11 @@ function TeamModal({ teamData, show, onHide }) {
       </Modal.Body>
 
       <Modal.Footer>
-        <Button variant="primary">Visa spelare</Button>
+        <FavoriteButton 
+              item={teamData}
+              keyName="favoriteTeam">
+        </FavoriteButton>
+        <Button variant="primary" onClick={() => onShowSquad(teamData.data.team.id)}>Visa spelare</Button>
       </Modal.Footer>
     </Modal>
   );
