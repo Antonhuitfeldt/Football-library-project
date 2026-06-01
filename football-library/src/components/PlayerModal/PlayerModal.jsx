@@ -1,7 +1,4 @@
-import Modal from 'react-bootstrap/Modal';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import {Modal, Container, Row, Col} from 'react-bootstrap';
 import FavoriteButton from '../FavoriteButton/FavoriteButton';
 
 function PlayerModal({ playerData, show, onHide }) {

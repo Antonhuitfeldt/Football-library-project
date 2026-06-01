@@ -1,8 +1,4 @@
-import Button from 'react-bootstrap/Button';
-import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container';
-import Modal from 'react-bootstrap/Modal';
-import Row from 'react-bootstrap/Row';
+import {Button, Col, Container, Modal, Row} from 'react-bootstrap';
 import FavoriteButton from '../FavoriteButton/FavoriteButton';
 
 function TeamModal({ teamData, show, onHide, onShowSquad, image }) {
