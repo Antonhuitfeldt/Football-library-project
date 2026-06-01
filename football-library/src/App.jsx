@@ -100,16 +100,21 @@ const App =() => {
   
   return (
     <Router>
-      <main>
-        <NavBar />
-  
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/favorites" element={<FavoritesPage 
+      <NavBar />
+
+      <Routes>
+        <Route 
+          path="/" 
+          element={<HomePage />} 
+        />
+
+        <Route 
+          path="/favorites" 
+          element={<FavoritesPage 
           playerKey="favoritePlayers" 
-          teamKey="favoriteTeams"/>} />
-        </Routes>
-      </main>
+          teamKey="favoriteTeams"/>} 
+        />
+      </Routes>
     </Router>
   );
 }
