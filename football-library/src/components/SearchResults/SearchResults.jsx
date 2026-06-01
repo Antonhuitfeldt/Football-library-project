@@ -6,6 +6,12 @@ const SearchResults =({ results, onTeamClick }) => {
     return 
   }
 
+  if (results[0].type === "player") {
+    return (
+      <p className="text-danger mt-3">You can only search fot teams</p>
+    );
+  }
+
   const topResultType = results[0].type;
 
   const listToShow = results.filter(item => item.type === topResultType);
