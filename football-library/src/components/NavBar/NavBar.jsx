@@ -14,18 +14,7 @@ const NavBar = () => {
                     <Nav.Link as={Link} to="/favorites">
                       Favorites
                     </Nav.Link>
-                    <Nav.Link href="#link">Search</Nav.Link>
-                    <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                      <NavDropdown.Item href="#action/3.1">Players</NavDropdown.Item>
-                      <NavDropdown.Item href="#action/3.2">
-                        Club
-                      </NavDropdown.Item>
-                      <NavDropdown.Item href="#action/3.3">Info</NavDropdown.Item>
-                      <NavDropdown.Divider />
-                      <NavDropdown.Item href="#action/3.4">
-                        Anton
-                      </NavDropdown.Item>
-                    </NavDropdown>
+                    <Nav.Link href="#link">World cup</Nav.Link>
                   </Nav>
                 </Navbar.Collapse>
               </Container>
