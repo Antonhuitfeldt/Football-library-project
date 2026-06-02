@@ -40,16 +40,26 @@ const App =() => {
   const [players, setPlayers] = useState([]);
   const [image, setImage] = useState(null);
   const [playerData, setPlayerData] = useState(null);
+  const [error, setError] = useState(null);
 
   const onPlayerClick = (player) => {
     setPlayerData(player);
   }
 
   const onSearchSubmit = async (query) => {
-    const result = await searchResults(query);
-    const cleanData = BasicTeamData(result.data.results);
+    try {
+      setError(null);
+
+      const result = await searchResults(query);
+
+      const cleanData = BasicTeamData(result.data.results);
+      setResults(cleanData);
+    } catch (err){
+      console.error("API error: ", err);
+      setResults([]);
+      setError("Could not contact the API, try again later...")
+    }
     
-    setResults(cleanData);
   }
 
   const onTeamClick = async (teamId) => {
@@ -69,7 +79,9 @@ const App =() => {
   const HomePage = () => (
     <>
       <HeroSection onSearchSubmit={onSearchSubmit} />
-
+      {error && (
+        <p className="text-danger mt-3">{error}</p>
+      )}
       <SearchResults results={results} onTeamClick={onTeamClick} />
 
       <hr />
