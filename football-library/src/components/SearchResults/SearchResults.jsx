@@ -1,4 +1,5 @@
 import { ListGroup } from "react-bootstrap";
+import ResultCard from "../ResultCard/ResultCard";
 import "./SearchResults.css";
 
 const SearchResults =({ results, onTeamClick }) => {
@@ -21,14 +22,12 @@ const SearchResults =({ results, onTeamClick }) => {
       <h2 className="search-result-title">Teams</h2>
       <ListGroup className="mt-3">
         {listToShow.map((item) => (
-          <ListGroup.Item key={item.id} className="d-flex align-items-center search-result-item mb-3" onClick={() => onTeamClick(item.id)}>
-            <div>
-              <h5 className="mb-1">{item.name}</h5>
-              <small className="text-muted">
-                {item.country} ({item.countryCode}) - {item.type}
-              </small>
-            </div>
-          </ListGroup.Item>
+          <ResultCard
+            key={item.id}
+            item={item}
+            keyName="favoriteTeams"
+            onClick={() => onTeamClick(item.id)}
+          />
         ))}
       </ListGroup>
     </div>
