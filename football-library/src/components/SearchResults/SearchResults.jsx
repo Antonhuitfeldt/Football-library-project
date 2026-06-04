@@ -9,7 +9,7 @@ const SearchResults =({ results, onTeamClick }) => {
 
   if (results[0].type === "player") {
     return (
-      <p className="text-danger mt-3">You can only search fot teams</p>
+      <p className="text-danger mt-3">You can only search for teams</p>
     );
   }
 
