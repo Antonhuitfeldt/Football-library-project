@@ -14,7 +14,9 @@ const NavBar = () => {
                     <Nav.Link as={Link} to="/favorites">
                       Favorites
                     </Nav.Link>
-                    <Nav.Link href="#link">World cup</Nav.Link>
+                    <Nav.Link as={Link} to="/worldcup">
+                    World cup
+                    </Nav.Link>
                   </Nav>
                 </Navbar.Collapse>
               </Container>

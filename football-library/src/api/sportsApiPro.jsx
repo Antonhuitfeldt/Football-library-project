@@ -111,15 +111,3 @@ export async function getWorldCupGroups() {
   if (!response.ok) throw new Error("Kunde inte hämta grupper.");
   return response.json();
 }
-
-//Get the schedule for the upcoming matches in the 2026 worldcup
-export async function getWorldCupMatches() {
-  const apiKey = import.meta.env.VITE_SPORTS_API_PRO_KEY;
-
-  const response = await fetch(`${BASE_URL}/api/world-cup-2026/matches?page=0`, {
-    headers: { "x-api-key": apiKey },
-  });
-
-  if (!response.ok) throw new Error("Kunde inte hämta matcher.");
-  return response.json();
-}
