@@ -10,6 +10,7 @@ import PlayerList from './components/PlayerList/PlayerList';
 import PlayerModal from './components/PlayerModal/PlayerModal';
 import FavoritesPage from './pages/FavoritesPage/FavoritesPage';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import WorldCupPage from './pages/WorldCupPage/WorldCupPage';
 import { getCountryFlag } from "./api/restCountriesApi"; 
 
 const BasicTeamData =(results) => {
@@ -138,6 +139,11 @@ const App =() => {
           element={<FavoritesPage 
           playerKey="favoritePlayers" 
           teamKey="favoriteTeams"/>} 
+        />
+
+        <Route 
+          path="/worldcup" 
+          element={<WorldCupPage />} 
         />
       </Routes>
     </Router>
