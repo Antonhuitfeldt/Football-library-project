@@ -10,6 +10,7 @@ import PlayerList from './components/PlayerList/PlayerList';
 import PlayerModal from './components/PlayerModal/PlayerModal';
 import FavoritesPage from './pages/FavoritesPage/FavoritesPage';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { getCountryFlag } from "./api/restCountriesApi"; 
 
 const BasicTeamData =(results) => {
   
@@ -25,7 +26,8 @@ const BasicTeamData =(results) => {
       countryCode: entity.country?.alpha2 || "??",
       type: item.type,
       league: null,
-      emblem: null
+      emblem: null,
+      flag: null
     };
   });
 
@@ -49,18 +51,29 @@ const App =() => {
   const onSearchSubmit = async (query) => {
     try {
       setError(null);
-
+  
       const result = await searchResults(query);
-
+  
       const cleanData = BasicTeamData(result.data.results);
-      setResults(cleanData);
-    } catch (err){
+  
+      const resultsWithFlags = await Promise.all(
+        cleanData.map(async (item) => ({
+          ...item,
+          flag:
+            item.countryCode !== "??"
+              ? await getCountryFlag(item.countryCode)
+              : null,
+        }))
+      );
+      
+      setResults(resultsWithFlags);
+  
+    } catch (err) {
       console.error("API error: ", err);
       setResults([]);
-      setError("Could not contact the API, try again later...")
+      setError("Could not contact the API, try again later...");
     }
-    
-  }
+  };
 
   const onTeamClick = async (teamId) => {
     const data = await getTeam(teamId);
