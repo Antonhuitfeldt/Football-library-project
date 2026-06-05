@@ -1,5 +1,7 @@
 import "./FooterTitle.css";
 
+// Small reusable component that displays the footer heading
+// Keeps footer markup clean and separated from FooterSection
 const FooterTitle = () => {
   return (
     <div className="footer-title">

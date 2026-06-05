@@ -8,15 +8,6 @@ const ResultCard = ({ item, keyName, onClick }) => {
       ? item.country
       : item.country?.name || "Unknown";
 
-  const countryCode =
-    item.countryCode ||
-    item.country?.alpha2 ||
-    "";
-
-  const type =
-    item.type ||
-    (item.position ? "player" : "team");
-
   return (
     <div
       className="result-card d-flex align-items-center search-result-item mb-3"

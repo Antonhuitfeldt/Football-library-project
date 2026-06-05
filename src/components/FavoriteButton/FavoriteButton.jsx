@@ -1,23 +1,20 @@
-import React from "react";
 import { useFavorites } from "../../hooks/useFavorites";
-import "./FavoriteButton.css";
 
-// Knapp som kan lägga till/ta bort item från favoriter
+// Handles adding/removing an item from a specific favorites list
+// Uses the useFavorites hook to abstract localStorage logic
 const FavoriteButton =({ item, keyName }) => {
 
-    // Anropa hooken med rätt keyName (t.ex. "favoriteTeams" eller "favoritePlayers")
+// Access helper functions for checking and toggling favorites
     const { isFavorite, toggleFavorite } = useFavorites(keyName);
 
-    // Kolla om just det här itemet är favorit
+// Determine if this item is already marked as a favorite
     const favorite = isFavorite(item.id);
 
-    // Funktion som körs när man klickar på knappen
+// Toggle favorite status when the button is clicked
     const handleClick = () => {
-        // Ber hooken toggla favoritstatus för detta item
         toggleFavorite(item);
     }
 
-    // Renderar en knapp med olika text beroende på om item är favorit eller inte
     return (
         <button 
         className="btn btn-secondary"

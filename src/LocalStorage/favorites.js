@@ -1,39 +1,39 @@
 // Hämtar favoriter från localStorage baserat på en key
 export const getFavorites = (keyName) => {
-    // Hämtar sparad data från localStorage
-    const stored = localStorage.getItem(keyName);
+  // Hämtar sparad data från localStorage
+  const stored = localStorage.getItem(keyName);
 
-    // Om inget finns, returnera en tom lista
-    if (!stored){
-        return [];
-    }
+  // Om inget finns, returnera en tom lista
+  if (!stored){
+    return [];
+  }
 
-    try {
-        // Försök omvandla JSON-strängen till en array
-        return JSON.parse(stored);
-    } catch {
-        // Om JSON är korrupt, returnera tom lista istället för att krascha
-        return [];
-    }
+  try {
+    // Försök omvandla JSON-strängen till en array
+    return JSON.parse(stored);
+  } catch {
+    // Om JSON är korrupt, returnera tom lista istället för att krascha
+    return [];
+  }
 }
 
 
 // Sparar en lista av favoriter till localStorage
 export const saveFavorites = (keyName, list) => {
-    // Gör om listan till en JSON-sträng
-    const json = JSON.stringify(list);
+  // Gör om listan till en JSON-sträng
+  const json = JSON.stringify(list);
 
-    // Sparar JSON-strängen under rätt key
-    localStorage.setItem(keyName, json);
+  // Sparar JSON-strängen under rätt key
+  localStorage.setItem(keyName, json);
 }
 
 // Kollar om ett visst id redan finns i favoritlistan
 export const isFavorite = (keyName, id) => {
-    // Hämtar listan från localStorage
-    const list = getFavorites(keyName);
+  // Hämtar listan från localStorage
+  const list = getFavorites(keyName);
 
-    // Returnerar true om id finns i listan, annars false
-    return list.some(item => item.id === id);
+  // Returnerar true om id finns i listan, annars false
+  return list.some(item => item.id === id);
 }
 
 

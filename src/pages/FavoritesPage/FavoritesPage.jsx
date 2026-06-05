@@ -1,4 +1,3 @@
-import React from "react";
 import { useFavorites } from "../../hooks/useFavorites";
 import ResultCard from "../../components/ResultCard/ResultCard";
 import "./FavoritesPage.css";

@@ -1,23 +1,28 @@
 //GET teams based on search terms from the user.
 const BASE_URL = "https://v2.football.sportsapipro.com";
 
+// Fetch teams/players based on user search input
 export const searchResults = async (query) => {
   const apiKey = import.meta.env.VITE_SPORTS_API_PRO_KEY;
 
+// Prevent API calls without a valid key
   if (!apiKey) {
-    throw new Error("Saknar SportsAPI Pro API-nyckel.");
+    throw new Error("Missing SportsAPI Pro API key.");
   }
 
+// Perform search request
   const response = await fetch(`${BASE_URL}/api/search?q=${query}`, {
     headers: {
       "x-api-key": apiKey,
     },
   });
 
+// Handle API errors
   if (!response.ok) {
-    throw new Error("Kunde inte kontakta SportsAPI Pro.");
+     throw new Error("Could not contact SportsAPI Pro.");
   }
 
+// Convert response to JSON
   const data = await response.json();
   console.log(data)
 
@@ -35,7 +40,7 @@ export const getTeam = async (teamId) => {
   });
 
   if (!response.ok) {
-    throw new Error("Kunde inte hämta laginfo.");
+    throw new Error("Could not retrieve team info.");
   }
 
   const data = await response.json();
@@ -54,9 +59,10 @@ export const getTeamImage = async (teamId) => {
   });
 
   if (!response.ok) {
-    throw new Error("Kunde inte hämta lagbild.");
+    throw new Error("Could not retrieve team picture.");
   }
 
+// Convert image blob to a usable URL
   const blob = await response.blob();
   const url = URL.createObjectURL(blob);
   
@@ -75,7 +81,7 @@ export const getTeamSquad = async (teamId) => {
   });
 
   if (!response.ok) {
-    throw new Error("Kunde inte hämta laginfo.");
+    throw new Error("Could not retrieve team info.");
   }
 
   const data = await response.json();
@@ -83,8 +89,6 @@ export const getTeamSquad = async (teamId) => {
   
   return data;
 }
-
-//---------------------------------------------------World cup API calls-----------------------------------------------------------
 
 //GET worldcup info
 export const getWorldCupInfo = async () => {
@@ -94,7 +98,7 @@ export const getWorldCupInfo = async () => {
     headers: { "x-api-key": apiKey },
   });
 
-  if (!response.ok) throw new Error("Kunde inte hämta VM-info.");
+  if (!response.ok) throw new Error("Could not retrieve World Cup info.");
   return response.json();
 }
 
@@ -106,6 +110,6 @@ export const getWorldCupGroups = async () => {
     headers: { "x-api-key": apiKey },
   });
 
-  if (!response.ok) throw new Error("Kunde inte hämta grupper.");
+  if (!response.ok) throw new Error("Could not retrieve groups.");
   return response.json();
 }
