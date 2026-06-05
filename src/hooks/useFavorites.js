@@ -2,8 +2,7 @@ import { useState, useEffect} from 'react'
 import { getFavorites, toggleFavorites } from "../LocalStorage/favorites"
 
 // Custom hook som hanterar favoriter för en viss key
-export function useFavorites(keyName) {
-
+export const useFavorites = (keyName) => {
     // State som håller alla favoriter i minnet
     const [favorites, setFavorites] = useState([]);
 
@@ -13,16 +12,14 @@ export function useFavorites(keyName) {
         setFavorites(stored);               // Spara listan i state
     }, [keyName]); // Körs igen om key ändras
 
-
     // Kollar om ett visst id finns i favoritlistan (mot state)
-    function isFavorite(id) {
+    const isFavorite = (id) => {
         const stored = getFavorites(keyName);
         return stored.some(item => item.id === id);
     }
 
-
     // Lägger till eller tar bort ett item från favoriter
-    function toggleFavorite(item) {
+    const toggleFavorite = (item) => {
 
         const exists = favorites.some(fav => fav.id === item.id); // Finns item redan?
 

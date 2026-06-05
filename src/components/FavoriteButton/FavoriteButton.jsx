@@ -12,8 +12,7 @@ const FavoriteButton =({ item, keyName }) => {
     const favorite = isFavorite(item.id);
 
     // Funktion som körs när man klickar på knappen
-    function handleClick() {
-
+    const handleClick = () => {
         // Ber hooken toggla favoritstatus för detta item
         toggleFavorite(item);
     }

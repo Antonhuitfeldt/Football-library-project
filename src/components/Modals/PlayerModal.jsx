@@ -1,7 +1,7 @@
 import {Modal, Container, Row, Col} from 'react-bootstrap';
 import FavoriteButton from '../FavoriteButton/FavoriteButton';
 
-function PlayerModal({ playerData, show, onHide }) {
+const PlayerModal = ({ playerData, show, onHide }) => {
   if (!playerData) return null;
 
   const name = playerData.name;

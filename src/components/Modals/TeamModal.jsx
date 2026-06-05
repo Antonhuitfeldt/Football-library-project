@@ -1,7 +1,7 @@
 import {Button, Col, Container, Modal, Row} from 'react-bootstrap';
 import FavoriteButton from '../FavoriteButton/FavoriteButton';
 
-function TeamModal({ teamData, show, onHide, onShowSquad, image }) {
+const TeamModal = ({ teamData, show, onHide, onShowSquad, image }) => {
   
   if (!teamData) return null;
 

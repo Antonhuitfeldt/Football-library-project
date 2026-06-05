@@ -1,7 +1,7 @@
 //GET teams based on search terms from the user.
 const BASE_URL = "https://v2.football.sportsapipro.com";
 
-export async function searchResults(query) {
+export const searchResults = async (query) => {
   const apiKey = import.meta.env.VITE_SPORTS_API_PRO_KEY;
 
   if (!apiKey) {
@@ -25,7 +25,7 @@ export async function searchResults(query) {
 }
 
 //GET more information about a specific team
-export async function getTeam(teamId) {
+export const getTeam = async (teamId) => {
   const apiKey = import.meta.env.VITE_SPORTS_API_PRO_KEY;
 
   const response = await fetch(`${BASE_URL}/api/teams/${teamId}`, {
@@ -44,7 +44,7 @@ export async function getTeam(teamId) {
 }
 
 //GET the image/logo of the team, use the teamID that was a response from the searchResult() call.
-export async function getTeamImage(teamId) {
+export const getTeamImage = async (teamId) => {
   const apiKey = import.meta.env.VITE_SPORTS_API_PRO_KEY;
 
   const response = await fetch(`${BASE_URL}/api/teams/${teamId}/image`, {
@@ -65,7 +65,7 @@ export async function getTeamImage(teamId) {
 }
 
 //GET the teams players, use the teamID that was a response from the searchResult() call.
-export async function getTeamSquad(teamId) {
+export const getTeamSquad = async (teamId) => {
   const apiKey = import.meta.env.VITE_SPORTS_API_PRO_KEY;
 
   const response = await fetch(`${BASE_URL}/api/teams/${teamId}/players`, {
@@ -84,12 +84,10 @@ export async function getTeamSquad(teamId) {
   return data;
 }
 
-
-
 //---------------------------------------------------World cup API calls-----------------------------------------------------------
 
 //GET worldcup info
-export async function getWorldCupInfo() {
+export const getWorldCupInfo = async () => {
   const apiKey = import.meta.env.VITE_SPORTS_API_PRO_KEY;
 
   const response = await fetch(`${BASE_URL}/api/world-cup-2026`, {
@@ -101,7 +99,7 @@ export async function getWorldCupInfo() {
 }
 
 //GET groups of the teams in ht 2026 worldcup
-export async function getWorldCupGroups() {
+export const getWorldCupGroups = async () => {
   const apiKey = import.meta.env.VITE_SPORTS_API_PRO_KEY;
 
   const response = await fetch(`${BASE_URL}/api/world-cup-2026/groups`, {
