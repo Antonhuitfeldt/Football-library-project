@@ -1,9 +1,16 @@
+/* 
+- Main heading inside the footer
+- White text for strong contrast against gradient background
+*/
 .footer-title h3 {
     color: white;
     margin: 0;
     font-size: 1.5rem;
 }
 
+/* 
+- Softer, semi-transparent text for visual hierarchy
+*/
 .footer-title p {
     color: rgba(255,255,255,0.6);
     margin-top: 0.5rem;

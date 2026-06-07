@@ -1,21 +1,13 @@
 import "./ResultCard.css";
 import FavoriteButton from "../FavoriteButton/FavoriteButton";
 
+// a card to display the information about a certain team or player
 const ResultCard = ({ item, keyName, onClick }) => {
 
   const countryName =
     typeof item.country === "string"
       ? item.country
       : item.country?.name || "Unknown";
-
-  const countryCode =
-    item.countryCode ||
-    item.country?.alpha2 ||
-    "";
-
-  const type =
-    item.type ||
-    (item.position ? "player" : "team");
 
   return (
     <div

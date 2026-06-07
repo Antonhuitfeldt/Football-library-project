@@ -1,48 +1,36 @@
 import { useState, useEffect} from 'react'
 import { getFavorites, toggleFavorites } from "../LocalStorage/favorites"
 
-// Custom hook som hanterar favoriter för en viss key
-export function useFavorites(keyName) {
+/* Favorites hook */
+export const useFavorites = (keyName) => {
+  const [favorites, setFavorites] = useState([]);
 
-    // State som håller alla favoriter i minnet
-    const [favorites, setFavorites] = useState([]);
+  // Load saved favorites
+  useEffect(() => {
+    const stored = getFavorites(keyName);
+    setFavorites(stored);
+  }, [keyName]);
 
-    // Körs när hooken laddas: hämtar sparade favoriter från localStorage
-    useEffect(() => {
-        const stored = getFavorites(keyName);   // Hämta lista från localStorage
-        setFavorites(stored);               // Spara listan i state
-    }, [keyName]); // Körs igen om key ändras
+  // Check if item is favorite
+  const isFavorite = (id) => {
+    const stored = getFavorites(keyName);
+    return stored.some(item => item.id === id);
+  };
 
+  // Add/remove favorite
+  const toggleFavorite = (item) => {
+    const exists = favorites.some(fav => fav.id === item.id);
 
-    // Kollar om ett visst id finns i favoritlistan (mot state)
-    function isFavorite(id) {
-        const stored = getFavorites(keyName);
-        return stored.some(item => item.id === id);
+    let updatedList;
+    if (exists) {
+      updatedList = favorites.filter(fav => fav.id !== item.id);
+    } else {
+      updatedList = [...favorites, item];
     }
 
+    setFavorites(updatedList);
+    toggleFavorites(keyName, item);
+  };
 
-    // Lägger till eller tar bort ett item från favoriter
-    function toggleFavorite(item) {
-
-        const exists = favorites.some(fav => fav.id === item.id); // Finns item redan?
-
-        let updatedList;
-
-        if (exists) {
-            updatedList = favorites.filter(fav => fav.id !== item.id); // Ta bort
-        } else {
-            updatedList = [...favorites, item]; // Lägg till
-        }
-
-        setFavorites(updatedList); // Uppdatera UI direkt
-
-        toggleFavorites(keyName, item); // Spara ändringen i localStorage
-    }
-
-    // Returnerar allt UI behöver använda
-    return {
-        favorites, 
-        isFavorite, 
-        toggleFavorite
-    };
-}
+  return {favorites, isFavorite, toggleFavorite};
+};

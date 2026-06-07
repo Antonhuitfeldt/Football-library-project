@@ -1,9 +1,17 @@
 import {Modal, Container, Row, Col} from 'react-bootstrap';
 import FavoriteButton from '../FavoriteButton/FavoriteButton';
 
-function PlayerModal({ playerData, show, onHide }) {
+/*
+- Displays detailed information about a selected player
+- Triggered from search results or team squad views
+- Uses React-Bootstrap for layout and modal structure
+*/
+const PlayerModal = ({ playerData, show, onHide }) => {
+  
+  // Avoid rendering the modal before data is available
   if (!playerData) return null;
 
+  // Extract relevant player fields for cleaner JSX
   const name = playerData.name;
   const jerseyNumber = playerData.jerseyNumber;
   const position = playerData.position;
@@ -16,7 +24,13 @@ function PlayerModal({ playerData, show, onHide }) {
   const contractUntil = new Date(playerData.contractUntilTimestamp * 1000).toLocaleDateString('sv-SE');
 
   return (
-    <Modal show={show} onHide={onHide} aria-labelledby="player-modal-title" centered>
+    <Modal 
+      show={show} 
+      onHide={onHide} 
+      aria-labelledby="player-modal-title" 
+      centered
+    >
+      
       <Modal.Header closeButton>
         <Modal.Title id="player-modal-title">
           {name}
@@ -25,9 +39,11 @@ function PlayerModal({ playerData, show, onHide }) {
 
       <Modal.Body>
         <Container>
+
+          {/* Basic player info */}
           <Row>
             <Col xs={6}>
-              <p><strong>Tröjnummer</strong></p>
+              <p><strong>Shirt Number</strong></p>
               <p>{jerseyNumber}</p>
             </Col>
             <Col xs={6}>
@@ -35,39 +51,47 @@ function PlayerModal({ playerData, show, onHide }) {
               <p>{position}</p>
             </Col>
           </Row>
+
+          {/* Nationality + team */}
           <Row>
             <Col xs={6}>
-              <p><strong>Land</strong></p>
+              <p><strong>Nationality</strong></p>
               <p>{country}</p>
             </Col>
             <Col xs={6}>
-              <p><strong>Lag</strong></p>
+              <p><strong>Team</strong></p>
               <p>{team}</p>
             </Col>
           </Row>
+
+          {/* Physical attributes */}
           <Row>
             <Col xs={6}>
-              <p><strong>Längd</strong></p>
+              <p><strong>Height</strong></p>
               <p>{height} cm</p>
             </Col>
             <Col xs={6}>
-              <p><strong>Fot</strong></p>
+              <p><strong>Strong Foot</strong></p>
               <p>{foot}</p>
             </Col>
           </Row>
+
+          {/* Birth + contract */}
           <Row>
             <Col xs={6}>
-              <p><strong>Född</strong></p>
+              <p><strong>Born</strong></p>
               <p>{dateOfBirth}</p>
             </Col>
             <Col xs={6}>
-              <p><strong>Kontrakt till</strong></p>
+              <p><strong>Contract Expire</strong></p>
               <p>{contractUntil}</p>
             </Col>
           </Row>
+
+          {/* Market value + favorite button */}
           <Row>
             <Col xs={6}>
-              <p><strong>Marknadsvärde</strong></p>
+              <p><strong>Market Value</strong></p>
               <p>{marketValue}</p>
             </Col>
             <Col xs={6}>
@@ -77,10 +101,11 @@ function PlayerModal({ playerData, show, onHide }) {
               </FavoriteButton>
             </Col>
           </Row>
+
         </Container>
       </Modal.Body>
     </Modal>
   );
-}
+};
 
 export default PlayerModal;

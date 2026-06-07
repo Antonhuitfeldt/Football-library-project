@@ -1,5 +1,6 @@
 import "./FooterTitle.css";
 
+/* Small component that displays the footer heading */
 const FooterTitle = () => {
   return (
     <div className="footer-title">

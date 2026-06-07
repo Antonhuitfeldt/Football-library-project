@@ -1,3 +1,7 @@
+/* 
+- Adds spacing above the footer
+- Uses the same orange→black gradient as the rest of the app
+ */
 .footer-section {
 
     margin-top: 4rem;
@@ -7,7 +11,11 @@
     background: linear-gradient(0deg,rgba(255, 119, 0, 1) 0%, rgba(000, 000, 0, 1) 100%);
 }
 
-
+/*
+- Centers content and limits width
+- Uses flexbox for spacing between sections
+- Wraps items on smaller screens
+*/
 .footer-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -21,8 +29,10 @@
     gap: 2rem;
 }
 
-
-
+/* 
+- Slightly faded text for a softer visual hierarchy
+- Smooth hover transition if styled later
+*/
 .footer-copy p {
     text-decoration: none;
     color: rgba(255,255,255,0.7);
