@@ -1,6 +1,7 @@
 import {Container, Row, Col} from 'react-bootstrap';
 import "./PlayerList.css";
 
+// Imported list from bootstrap
 const PlayerList = ({ players, image, onPlayerClick }) => {
   if (players.length === 0) return null;
 
@@ -18,6 +19,6 @@ const PlayerList = ({ players, image, onPlayerClick }) => {
       ))}
     </Container>
   );
-}
+};
 
 export default PlayerList;

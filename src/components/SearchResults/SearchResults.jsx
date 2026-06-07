@@ -2,19 +2,21 @@ import { ListGroup } from "react-bootstrap";
 import ResultCard from "../ResultCard/ResultCard";
 import "./SearchResults.css";
 
+/* Search results list */
 const SearchResults =({ results, onTeamClick }) => {
   if (!results || results.length === 0) {
     return 
   }
 
+  // Block player searches
   if (results[0].type === "player") {
     return (
       <p className="text-danger mt-3">You can only search for teams</p>
     );
   }
 
+  // Show only items matching the top result type
   const topResultType = results[0].type;
-
   const listToShow = results.filter(item => item.type === topResultType);
 
   return (

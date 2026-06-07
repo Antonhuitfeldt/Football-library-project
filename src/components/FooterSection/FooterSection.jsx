@@ -1,8 +1,7 @@
 import "./FooterSection.css";
 import FooterTitle from "../FooterTitle/FooterTitle";
 
-// Displays the global footer for the application
-// Contains project title, authors, and copyright
+/* Displays the global footer for the application */
 const FooterSection = () => {
   return (
     <footer className="footer-section">

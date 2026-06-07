@@ -24,10 +24,9 @@ export const searchResults = async (query) => {
 
 // Convert response to JSON
   const data = await response.json();
-  console.log(data)
 
   return data;
-}
+};
 
 //GET more information about a specific team
 export const getTeam = async (teamId) => {
@@ -46,7 +45,7 @@ export const getTeam = async (teamId) => {
   const data = await response.json();
 
   return data;
-}
+};
 
 //GET the image/logo of the team, use the teamID that was a response from the searchResult() call.
 export const getTeamImage = async (teamId) => {
@@ -66,9 +65,8 @@ export const getTeamImage = async (teamId) => {
   const blob = await response.blob();
   const url = URL.createObjectURL(blob);
   
-  console.log(url);
   return url;
-}
+};
 
 //GET the teams players, use the teamID that was a response from the searchResult() call.
 export const getTeamSquad = async (teamId) => {
@@ -85,10 +83,9 @@ export const getTeamSquad = async (teamId) => {
   }
 
   const data = await response.json();
-  console.log(data)
   
   return data;
-}
+};
 
 //GET worldcup info
 export const getWorldCupInfo = async () => {
@@ -100,7 +97,7 @@ export const getWorldCupInfo = async () => {
 
   if (!response.ok) throw new Error("Could not retrieve World Cup info.");
   return response.json();
-}
+};
 
 //GET groups of the teams in ht 2026 worldcup
 export const getWorldCupGroups = async () => {
@@ -112,4 +109,4 @@ export const getWorldCupGroups = async () => {
 
   if (!response.ok) throw new Error("Could not retrieve groups.");
   return response.json();
-}
+};

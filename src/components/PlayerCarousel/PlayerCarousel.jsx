@@ -5,6 +5,8 @@ const salah = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-SC0PGCVgl
 const ronaldo = "https://cdn.yourusercontent.com/media/usercontent/puzzles/228/thumbnails/cristiano-ronaldo-prime-0a42271b-c5e6-4a1e-81fb-2340288c5ccc.jpeg";
 const bruno = "https://wallpapercave.com/wp/wp6876995.jpg";
 
+
+// Image carousel imported from bootstrap
 const PlayerCarousel = () => {
   return (
     <Carousel>

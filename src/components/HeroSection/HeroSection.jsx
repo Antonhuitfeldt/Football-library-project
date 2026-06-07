@@ -4,6 +4,10 @@ import HeroTitle from "../HeroTitle/HeroTitle";
 import PlayerCarousel from "../PlayerCarousel/PlayerCarousel";
 import SearchField from "../SearchField/SearchField";
 
+/*
+- Main landing section of the app
+- Displays title, search field, and optional player carousel
+*/
 const HeroSection = ({ onSearchSubmit }) => {
   return (
     <section className="hero-section">

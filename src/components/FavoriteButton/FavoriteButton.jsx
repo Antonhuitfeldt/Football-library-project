@@ -1,16 +1,15 @@
 import { useFavorites } from "../../hooks/useFavorites";
 
-// Handles adding/removing an item from a specific favorites list
-// Uses the useFavorites hook to abstract localStorage logic
+/* A button that adds teams and players to favorites */
 const FavoriteButton =({ item, keyName }) => {
 
-// Access helper functions for checking and toggling favorites
+    // Access helper functions for checking and toggling favorites
     const { isFavorite, toggleFavorite } = useFavorites(keyName);
 
-// Determine if this item is already marked as a favorite
+    // Determine if this item is already marked as a favorite
     const favorite = isFavorite(item.id);
 
-// Toggle favorite status when the button is clicked
+    // Toggle favorite status when the button is clicked
     const handleClick = () => {
         toggleFavorite(item);
     }
@@ -22,6 +21,6 @@ const FavoriteButton =({ item, keyName }) => {
             {favorite ? "Remove from favorites" : "Add to favorites"}
         </button>
     )
-}
+};
 
 export default FavoriteButton;

@@ -2,6 +2,7 @@ import {Container, Nav, Navbar} from 'react-bootstrap';
 import './NavBar.css';
 import { Link } from "react-router-dom";
         
+// classic navbar importet from bootstrap
 const NavBar = () => { 
   return( 
     <Navbar expand="lg" className="custom-navbar navbar-dark">
@@ -22,7 +23,7 @@ const NavBar = () => {
       </Container>
     </Navbar>
   );
-}
+};
         
 export default NavBar;
 
