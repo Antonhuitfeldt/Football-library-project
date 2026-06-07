@@ -52,7 +52,7 @@ Sammanfattningsvis valdes React eftersom det gav bäst balans mellan flexibilite
 git clone <repository-url>
 
 # 2. Gå in i projektmappen
-cd football-library
+cd Football-library-project
 
 # 3. Installera beroenden
 npm install
