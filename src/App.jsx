@@ -6,6 +6,10 @@ import HomePage from './pages/HomePage/HomePage';
 import FavoritesPage from './pages/FavoritesPage/FavoritesPage';
 import WorldCupPage from './pages/WorldCupPage/WorldCupPage';
 
+/*
+- Main application component that defines the routes
+- Renders the pages, navigation bar, and footer etc
+*/
 const App =() => {
 
   return (
@@ -35,6 +39,6 @@ const App =() => {
       
     </Router>
   );
-}
+};
 
 export default App;

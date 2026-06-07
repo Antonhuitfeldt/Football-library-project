@@ -1,3 +1,7 @@
+/*
+- Full‑screen intro section with gradient matching the app theme
+- Uses flexbox to place text (left) and image (right)
+*/
 .hero-section {
     background: #ff7700;
     background: linear-gradient(0deg,rgba(000, 000, 0, 1) 0%, rgba(255, 119, 0, 1) 100%);
@@ -9,14 +13,21 @@
     padding: 4rem;
 }
 
+/* Left side: main text content */
 .hero-left {
     width: 50%;
 }
 
+/* Right side: hero image or illustration */
 .hero-right {
     width: 35%;
 }
 
+/*
+- Centers content for tablets/mobiles
+- Hides the hero image to prioritize text
+- Adjusts typography and input sizing
+*/
 @media (max-width: 900px) {
 
     .hero-section {
@@ -32,14 +43,17 @@
         align-items: center;
     }
 
+    /* Hide hero image on smaller screens */
     .hero-right {
         display: none;
     }
 
+    /* Larger title for mobile impact */
     .hero-left h1 {
         font-size: 5rem;
     }
-
+    
+    /* Make search field full-width on mobile */
     .search-field {
         width: 100%;
         max-width: 600px;

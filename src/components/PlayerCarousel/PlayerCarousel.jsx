@@ -5,6 +5,8 @@ const salah = "https://wallpaperswide.com/download/mohamed_salah___liverpool-wal
 const ronaldo = "https://cdn.yourusercontent.com/media/usercontent/puzzles/228/thumbnails/cristiano-ronaldo-prime-0a42271b-c5e6-4a1e-81fb-2340288c5ccc.jpeg";
 const bruno = "https://wallpapercave.com/wp/wp6876995.jpg";
 
+
+// Image carousel imported from bootstrap
 const PlayerCarousel = () => {
   return (
     <Carousel>
