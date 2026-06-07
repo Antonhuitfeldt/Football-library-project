@@ -58,6 +58,7 @@ cd football-library
 npm install
 
 # 4. Skapa en .env-fil
+VITE_SPORTS_API_PRO_KEY = din_api_kod
 
 # 5. Starta utvecklingsservern
 npm run dev
