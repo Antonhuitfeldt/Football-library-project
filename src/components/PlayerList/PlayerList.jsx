@@ -1,7 +1,7 @@
 import {Container, Row, Col} from 'react-bootstrap';
 import "./PlayerList.css";
 
-// importet list from bootstrap
+// Imported list from bootstrap
 const PlayerList = ({ players, image, onPlayerClick }) => {
   if (players.length === 0) return null;
 
