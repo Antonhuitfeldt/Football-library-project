@@ -5,7 +5,7 @@ import PlayerList from '../../components/PlayerList/PlayerList';
 import TeamModal from '../../components/Modals/TeamModal';
 import PlayerModal from '../../components/Modals/PlayerModal';
 import { searchResults, getTeam, getTeamSquad, getTeamImage } from '../../api/sportsApiPro';
-import { getCountryFlag } from "../../api/restCountriesApi"; 
+import { getCountryFlag } from "../../utils/flagUrl";
 
 
 /* BasicTeamData
@@ -62,15 +62,10 @@ const HomePage = () => {
       const cleanData = BasicTeamData(result.data.results);
 
       // Attach flags to each item
-      const resultsWithFlags = await Promise.all(
-        cleanData.map(async (item) => ({
-          ...item,
-          flag:
-            item.countryCode !== "??"
-              ? await getCountryFlag(item.countryCode)
-              : null,
-        }))
-      );
+      const resultsWithFlags = cleanData.map((item) => {
+        item.flag = item.countryCode !== "??" ? getCountryFlag(item.countryCode) : null;
+        return item;
+      });
 
       setResults(resultsWithFlags);
 
