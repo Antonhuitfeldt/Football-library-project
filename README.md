@@ -31,7 +31,6 @@ Projektets målgrupp är fotbollsintresserade användare som vill utforska infor
 
 **API**
 - Sports API Pro (fotbollsdata)
-- REST Countries API (landsinformation och flaggor)
 
 ## Val av ramverk
 
@@ -68,7 +67,7 @@ npm run dev
 Användaren skriver in namnet på ett lag eller en spelare i sökfältet.
 Ett API-anrop skickas till Sports API Pro.
 Resultaten bearbetas och visas på sidan.
-För varje lag hämtas landsflaggan via REST Countries API baserat på lagets landskod.
+För varje lag hämtas landsflaggan baserat på lagets landskod.
 Användaren kan visa mer information om lag och spelare samt spara dem som favoriter.
 
 ## API
@@ -79,12 +78,6 @@ Används för att hämta:
 - Spelare
 - Trupper
 - Laginformation
-
-### REST Countries API
-Används för att hämta:
-
-- Landsinformation
-- Nationella flaggor
 
 ## Utvecklare
 
